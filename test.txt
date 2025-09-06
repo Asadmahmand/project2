@@ -1,2 +1,2 @@
 This is a test file. 
-This is extra line
+This is extra line, test
