@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Test Website — Demo</title>
+  <meta name="description" content="A simple test website page." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    :root{
+      --bg:#f6f9fc; --card:#ffffff; --muted:#6b7280; --accent:#2563eb; --glass: rgba(255,255,255,0.6);
+    }
+    [data-theme="dark"]{ --bg:#0b1220; --card:#071024; --muted:#9aa4b2; --accent:#38bdf8; --glass: rgba(255,255,255,0.04);} 
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg),#ffffff); color: #0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+    }
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1100px;margin:0 auto}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:grid;place-items:center;color:#fff;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    .container{max-width:1100px;margin:28px auto;padding:24px}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 30px rgba(16,24,40,0.06);padding:28px}
+    h1{margin:0 0 12px;font-size:clamp(26px,4vw,40px);line-height:1.05}
+    p.lead{margin:0 0 20px;color:var(--muted);font-size:1.05rem}
+    .cta{display:inline-flex;gap:10px}
+    .btn{background:var(--accent);color:white;padding:12px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--accent);border:2px solid rgba(37,99,235,0.12)}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .feature{padding:18px;border-radius:10px;background:linear-gradient(180deg,var(--glass),transparent);border:1px solid rgba(16,24,40,0.02)}
+    .muted{color:var(--muted)}
+
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6eef8;background:transparent;color:inherit}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{max-width:1100px;margin:36px auto 0;padding:20px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:600px){
+      .features{grid-template-columns:1fr}
+      header{padding:0 6px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">TS</div>
+      <div>
+        <strong>Test Site</strong>
+        <div class="muted" style="font-size:12px">A small demo page</div>
+      </div>
+    </div>
+    <nav aria-label="Main navigation">
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" class="btn ghost" aria-pressed="false">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h1>Welcome to your test website</h1>
+          <p class="lead">Simple, responsive, and accessible starter page. Use this file to prototype layout, test styles, or demo UI quickly.</p>
+          <div class="cta">
+            <a href="#contact" class="btn">Get in touch</a>
+            <a href="#features" class="btn ghost">See features</a>
+          </div>
+
+          <div class="features" style="margin-top:22px">
+            <div class="feature">
+              <strong>Responsive</strong>
+              <div class="muted" style="font-size:13px">Mobile-first layout and fluid typography.</div>
+            </div>
+            <div class="feature">
+              <strong>Accessible</strong>
+              <div class="muted" style="font-size:13px">Semantic markup and keyboard-focusable controls.</div>
+            </div>
+            <div class="feature">
+              <strong>Lightweight</strong>
+              <div class="muted" style="font-size:13px">All styles in one file — easy to iterate.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Quick notes</h3>
+          <p class="muted" style="font-size:14px">This is a demonstration page. Edit the HTML and CSS directly to experiment. The contact form below is non-functional — it prevents submission and shows a toast message for testing.</p>
+          <ul class="muted" style="padding-left:18px">
+            <li>Keyboard friendly</li>
+            <li>Theme toggle (light/dark)</li>
+            <li>Minimal JS</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section id="features" style="margin-top:28px">
+      <div class="card">
+        <h2 style="margin-top:0">Features</h2>
+        <p class="muted">Small set of ready-to-use UI blocks for demos and tests.</p>
+        <div class="features" style="margin-top:12px">
+          <div class="feature">
+            <h4 style="margin:0 0 8px">Typography</h4>
+            <div class="muted">Scales with viewport for readable headings and body text.</div>
+          </div>
+          <div class="feature">
+            <h4 style="margin:0 0 8px">Components</h4>
+            <div class="muted">Cards, buttons, forms, and layout helpers included.</div>
+          </div>
+          <div class="feature">
+            <h4 style="margin:0 0 8px">Lightweight</h4>
+            <div class="muted">No frameworks — plain HTML/CSS/JS for fast loading.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:28px">
+      <div class="card">
+        <h2 style="margin-top:0">Contact (test)</h2>
+        <p class="muted">Try the form to simulate a user interaction.</p>
+        <form id="contactForm">
+          <label class="muted">Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label class="muted">Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label class="muted">Message
+            <textarea name="message" placeholder="Write a short message"></textarea>
+          </label>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button type="submit" class="btn">Send (test)</button>
+            <button type="reset" class="btn ghost">Reset</button>
+          </div>
+        </form>
+        <div id="toast" role="status" aria-live="polite" style="display:none;margin-top:12px;padding:10px;border-radius:8px;background:rgba(37,99,235,0.08);color:var(--accent)"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>© Test Site • Built for demos</div>
+    <div class="muted">Made with plain HTML · {static}</div>
+  </footer>
+
+  <script>
+    (function(){
+      const b = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      const initTheme = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if(initTheme === 'dark') b.setAttribute('data-theme','dark');
+      btn.addEventListener('click', ()=>{
+        const isDark = b.getAttribute('data-theme') === 'dark';
+        b.setAttribute('data-theme', isDark ? '': 'dark');
+        btn.setAttribute('aria-pressed', String(!isDark));
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      });
+
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          const target = document.querySelector(a.getAttribute('href'));
+          if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+        });
+      });
+
+      // Contact form: prevent real submit and show a toast
+      const form = document.getElementById('contactForm');
+      const toast = document.getElementById('toast');
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const data = new FormData(form);
+        toast.textContent = `Thanks, ${data.get('name') || 'friend'} — message received (test).`;
+        toast.style.display = 'block';
+        setTimeout(()=> toast.style.display = 'none', 4500);
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
